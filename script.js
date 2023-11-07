@@ -1,8 +1,31 @@
 // Create two snails
 
+class snail{
+    constructor(name){
+        this.name =name
+        this.speed = 7
+    }
+    move(){
+        this.speed ++
+    }
+}
+
+const Tom = new snail('Dom')
+
+console.log(Tom.speed)
+
+
 //use a query selector to read two separate keys on the computer.
 // The keys I want to select for snail 1 are 'A', 'W', 'S', 'D'
 // The keys I want to select for snail 2 are 'Left', 'Up', 'Down', 'Right'
+const run = document.querySelector('.run')
+run.addEventListener('click', ()=>{
+    Tom.move();
+    Tom.move();
+    Tom.move();
+    const check = document.querySelector('.count')
+    check.textContent =`${Tom.speed}`
+})
 
 //Create a function that moves to images accross the screen 
 // in incredibly small units depending on if you tap the specific key,
